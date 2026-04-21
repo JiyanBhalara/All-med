@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Healthcare Trust Blue */
+  --color-primary: #0077B6;
+  --color-primary-dark: #005f8a;
+  --color-primary-light: #e0f2fe;
+
+  /* Healing Teal-Green */
+  --color-secondary: #2a9d8f;
+  --color-secondary-dark: #1f7a6e;
+  --color-secondary-light: #e6f7f5;
+
+  /* Warm Gold Accent */
+  --color-accent: #d4a843;
+  --color-accent-dark: #b8922e;
+  --color-accent-light: #fef9e7;
+
+  /* Emergency Red (for alerts/urgent) */
+  --color-urgent: #dc2626;
+  --color-urgent-light: #fef2f2;
+
+  /* Neutrals */
+  --color-background: #ffffff;
+  --color-foreground: #1b2a3d;
+  --color-muted: #5a6a7e;
+  --color-muted-light: #f0f5f9;
+  --color-border: #dce4ed;
+
+  /* Status */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  --font-sans: var(--font-inter);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Heartbeat pulse animation */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  56% { transform: scale(1); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 1; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: 0; }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ECG line animation */
+.ecg-line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: dash 2s linear infinite;
+}
