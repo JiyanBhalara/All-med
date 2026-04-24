@@ -157,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Specialty Exams */}
+      {/* 5. Specialty Exams */}
       <section className="py-16 sm:py-20 bg-muted-light relative overflow-hidden">
         {/* Subtle health pattern */}
         <div className="absolute top-0 right-0 w-64 h-64 opacity-[0.03]">

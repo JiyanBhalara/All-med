@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Clock,
@@ -166,19 +167,16 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-          {/* Logo with Medical Cross */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
-              <MedicalCross className="h-5 w-5" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold text-primary leading-tight">
-                All Med Urgent Care
-              </span>
-              <span className="text-[10px] sm:text-[11px] text-muted leading-tight tracking-wide uppercase">
-                {SITE.tagline}
-              </span>
-            </div>
+          {/* Logo */}
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/logo.png"
+              alt="All Med Urgent Care"
+              width={220}
+              height={60}
+              priority
+              className="h-11 sm:h-13 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav Links */}
@@ -238,13 +236,16 @@ export default function Header() {
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between border-b border-border px-4 py-4 bg-primary-light">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
-              <MedicalCross className="h-4 w-4" />
-            </div>
-            <span className="text-lg font-bold text-primary">Menu</span>
-          </div>
+        <div className="flex items-center justify-between border-b border-border px-4 py-3 bg-primary-light">
+          <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+            <Image
+              src="/logo.png"
+              alt="All Med Urgent Care"
+              width={180}
+              height={48}
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
           <button
             onClick={() => setMobileMenuOpen(false)}
             className="rounded-lg p-1.5 hover:bg-white transition-colors"

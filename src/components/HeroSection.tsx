@@ -1,6 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   ShieldCheck,
   Clock,
@@ -10,6 +12,11 @@ import {
   CalendarCheck,
 } from "lucide-react";
 import { HealthPattern, HeartbeatLine, MedicalCross } from "./HealthIcons";
+
+const POSTERS = [
+  "/posters/slider-1.jpg",
+  "/posters/Slide-3.jpg",
+];
 
 const trustIndicators = [
   { icon: ShieldCheck, label: "Board Certified Doctors" },
@@ -29,8 +36,37 @@ export default function HeroSection({
   phoneHref,
   phone,
 }: HeroSectionProps) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((c) => (c + 1) % POSTERS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#003d5c] via-primary-dark to-primary text-white">
+      {/* Poster background slides — low opacity so gradient + content stay dominant */}
+      {POSTERS.map((src, i) => (
+        <div
+          key={src}
+          aria-hidden="true"
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            i === current ? "opacity-[0.30]" : "opacity-0"
+          }`}
+        >
+          <Image
+            src={src}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority={i === 0}
+          />
+        </div>
+      ))}
+
       {/* Health pattern background */}
       <HealthPattern className="absolute inset-0 w-full h-full text-white" />
 
@@ -136,11 +172,11 @@ export default function HeroSection({
           className="mt-2 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {trustIndicators.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
-                <Icon className="h-5 w-5 text-secondary" />
+            <div key={label} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/25">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary/60">
+                <Icon className="h-5 w-5 text-white" />
               </div>
-              <span className="text-sm font-medium text-blue-50">{label}</span>
+              <span className="text-sm font-semibold text-white">{label}</span>
             </div>
           ))}
         </motion.div>
