@@ -29,8 +29,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Emergency Medicine",
     icon: Stethoscope,
-    color: "bg-red-50 text-red-600 border-red-200",
-    iconBg: "bg-red-100",
+    accent: "primary",
     services: [
       "Annual physicals",
       "Immunizations",
@@ -63,8 +62,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Specialty Exams",
     icon: FileCheck,
-    color: "bg-blue-50 text-blue-600 border-blue-200",
-    iconBg: "bg-blue-100",
+    accent: "secondary",
     services: [
       "Immigration medical exams",
       "Full physical exams",
@@ -77,8 +75,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Minor Injuries",
     icon: Bandage,
-    color: "bg-orange-50 text-orange-600 border-orange-200",
-    iconBg: "bg-orange-100",
+    accent: "accent",
     services: [
       "Bug bites / stings",
       "Minor burns",
@@ -96,8 +93,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Screenings & Monitoring",
     icon: Activity,
-    color: "bg-green-50 text-green-600 border-green-200",
-    iconBg: "bg-green-100",
+    accent: "secondary",
     services: [
       "A1c checks",
       "Health screenings (basic / comprehensive)",
@@ -109,8 +105,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Women's Health",
     icon: Heart,
-    color: "bg-pink-50 text-pink-600 border-pink-200",
-    iconBg: "bg-pink-100",
+    accent: "primary",
     services: [
       "Birth control care",
       "HPV evaluation",
@@ -123,8 +118,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Minor Illnesses",
     icon: Thermometer,
-    color: "bg-amber-50 text-amber-600 border-amber-200",
-    iconBg: "bg-amber-100",
+    accent: "accent",
     services: [
       "Allergies",
       "Bronchitis",
@@ -147,8 +141,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Vaccinations",
     icon: Syringe,
-    color: "bg-indigo-50 text-indigo-600 border-indigo-200",
-    iconBg: "bg-indigo-100",
+    accent: "secondary",
     services: [
       "Hepatitis A / B",
       "Influenza",
@@ -169,8 +162,7 @@ const SERVICE_CATEGORIES = [
   {
     title: "Skin Conditions",
     icon: ShieldCheck,
-    color: "bg-purple-50 text-purple-600 border-purple-200",
-    iconBg: "bg-purple-100",
+    accent: "primary",
     services: [
       "Acne",
       "Athlete's foot",
@@ -212,7 +204,7 @@ export default function ServicesPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#003d5c] via-primary-dark to-primary text-white py-16 sm:py-20 overflow-hidden">
+      <section className="relative bg-brand-gradient text-white py-16 sm:py-20 overflow-hidden">
         <HealthPattern className="absolute inset-0 w-full h-full text-white" />
         <div className="absolute top-10 right-10 hidden lg:block opacity-10">
           <HeartPulse className="w-32 h-32" />
@@ -221,12 +213,12 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
               <MedicalCross className="h-3.5 w-3.5 text-secondary" />
-              <span className="text-blue-100 font-medium">Comprehensive Urgent Care</span>
+              <span className="text-on-dark-soft font-medium">Comprehensive Urgent Care</span>
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               Our Medical Services
             </h1>
-            <p className="mt-6 text-lg leading-8 text-blue-100">
+            <p className="mt-6 text-lg leading-8 text-on-dark-soft">
               All Med Urgent Care is the perfect solution for non-life threatening
               emergencies. We have Board Certified Doctors. No appointment necessary.
               We serve the community&apos;s medical needs on a walk-in basis as a low
@@ -237,20 +229,24 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 lg:gap-8 md:grid-cols-2">
             {SERVICE_CATEGORIES.map((category) => {
               const Icon = category.icon;
+              const accentClasses = {
+                primary: { card: "hover:border-primary/40", iconWrap: "bg-primary-light text-primary", topBar: "bg-primary", bullet: "bg-primary/50" },
+                secondary: { card: "hover:border-secondary/40", iconWrap: "bg-secondary-light text-secondary", topBar: "bg-secondary", bullet: "bg-secondary/50" },
+                accent: { card: "hover:border-accent/50", iconWrap: "bg-accent-light text-accent-dark", topBar: "bg-accent", bullet: "bg-accent-dark/50" },
+              }[category.accent as "primary" | "secondary" | "accent"];
               return (
                 <div
                   key={category.title}
-                  className={`rounded-2xl border p-6 sm:p-8 ${category.color}`}
+                  className={`group relative rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all overflow-hidden ${accentClasses.card}`}
                 >
+                  <span className={`absolute top-0 left-0 right-0 h-1 ${accentClasses.topBar}`} />
                   <div className="flex items-center gap-4 mb-6">
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-xl ${category.iconBg}`}
-                    >
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${accentClasses.iconWrap}`}>
                       <Icon className="h-6 w-6" />
                     </div>
                     <h2 className="text-xl font-bold text-foreground">
@@ -261,9 +257,9 @@ export default function ServicesPage() {
                     {category.services.map((service) => (
                       <li
                         key={service}
-                        className="flex items-start gap-2 text-sm text-foreground/80"
+                        className="flex items-start gap-2 text-sm text-muted"
                       >
-                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-current opacity-40" />
+                        <span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${accentClasses.bullet}`} />
                         {service}
                       </li>
                     ))}
@@ -274,9 +270,9 @@ export default function ServicesPage() {
           </div>
 
           {/* X-ray Note */}
-          <div className="mt-12 flex items-start gap-3 rounded-xl border border-warning/30 bg-amber-50 p-5">
-            <AlertTriangle className="h-5 w-5 flex-shrink-0 text-warning mt-0.5" />
-            <p className="text-sm text-foreground/80">
+          <div className="mt-12 flex items-start gap-3 rounded-xl border border-accent/40 bg-accent-light p-5">
+            <AlertTriangle className="h-5 w-5 flex-shrink-0 text-accent-dark mt-0.5" />
+            <p className="text-sm text-foreground">
               X-ray service may not be available during all hrs of operation at
               designated convenient care Location.
             </p>
@@ -330,14 +326,14 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl bg-gradient-to-br from-[#003d5c] via-primary-dark to-primary p-8 sm:p-12 text-white text-center overflow-hidden">
+          <div className="relative rounded-2xl bg-brand-gradient p-8 sm:p-12 text-white text-center overflow-hidden">
             <HealthPattern className="absolute inset-0 w-full h-full text-white" />
             <div className="relative">
               <HeartPulse className="h-10 w-10 mx-auto mb-4 text-secondary animate-heartbeat" />
               <h2 className="text-2xl font-bold sm:text-3xl">
                 Ready to Get the Care You Need?
               </h2>
-              <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
+              <p className="mt-4 text-on-dark-soft max-w-2xl mx-auto">
                 Walk in to any of our locations or call us to learn more. No appointment
                 necessary. Open 7 days a week.
               </p>

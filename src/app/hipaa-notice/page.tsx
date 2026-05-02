@@ -10,9 +10,9 @@ export const metadata = {
 export default function HipaaNoticePage() {
   return (
     <div>
-      <section className="bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary py-16 md:py-20">
+      <section className="bg-brand-gradient-r py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-white">
-          <nav className="text-sm text-blue-200 mb-6">
+          <nav className="text-sm text-on-dark-muted mb-6">
             <Link href="/" className="hover:text-white">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-white">HIPAA Notice</span>

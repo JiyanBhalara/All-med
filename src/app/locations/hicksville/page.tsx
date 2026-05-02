@@ -41,10 +41,10 @@ export default function HicksvillePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-brand-gradient-r py-16 md:py-24 overflow-hidden">
         <HealthPattern className="absolute inset-0 w-full h-full text-white" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-white">
-          <nav className="text-sm text-blue-200 mb-6">
+          <nav className="text-sm text-on-dark-muted mb-6">
             <Link href="/" className="hover:text-white">
               Home
             </Link>
@@ -54,9 +54,9 @@ export default function HicksvillePage() {
             <span className="text-white">Hicksville, Long Island</span>
           </nav>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            All Med Urgent Care – Hicksville, Long Island
+            All Med Urgent Care â€“ Hicksville, Long Island
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
+          <p className="text-xl text-on-dark-soft max-w-2xl">
             Walk-in urgent care clinic serving Hicksville and the greater Long
             Island community. No appointment necessary. Open 7 days a week.
           </p>
@@ -115,7 +115,7 @@ export default function HicksvillePage() {
                   With board certified doctors on staff, we provide immediate
                   medical care for non-life threatening emergencies as well as
                   specialty exams including immigration medical exams, CDL/DOT
-                  physicals, and TLC medical exams. Walk-ins are always welcome –
+                  physicals, and TLC medical exams. Walk-ins are always welcome â€“
                   no appointment necessary.
                 </p>
               </div>

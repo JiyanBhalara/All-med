@@ -1,36 +1,40 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Healthcare Trust Blue */
-  --color-primary: #0077B6;
-  --color-primary-dark: #005f8a;
-  --color-primary-light: #e0f2fe;
+  /* AllMed brand red - signature red used across the site */
+  --color-primary: #dd0218;
+  --color-primary-dark: #bf0000;
+  --color-primary-darker: #8a0010;
+  --color-primary-light: #fde7ea;
+  --color-primary-lighter: #fff5f6;
 
-  /* Healing Teal-Green */
-  --color-secondary: #2a9d8f;
-  --color-secondary-dark: #1f7a6e;
-  --color-secondary-light: #e6f7f5;
+  /* Deep blue - trust accent & section backgrounds */
+  --color-secondary: #105eb7;
+  --color-secondary-dark: #0a4a92;
+  --color-secondary-light: #e3eef9;
 
-  /* Warm Gold Accent */
-  --color-accent: #d4a843;
-  --color-accent-dark: #b8922e;
-  --color-accent-light: #fef9e7;
+  /* Gold accent - awards, ratings, highlights */
+  --color-accent: #f9b700;
+  --color-accent-dark: #d99e00;
+  --color-accent-light: #fef5d4;
 
-  /* Emergency Red (for alerts/urgent) */
-  --color-urgent: #dc2626;
-  --color-urgent-light: #fef2f2;
+  /* Urgent / emergency cues - reuses brand red palette */
+  --color-urgent: #bf0000;
+  --color-urgent-light: #fde7ea;
 
-  /* Neutrals */
+  /* Neutrals - sourced from AllMed palette */
   --color-background: #ffffff;
-  --color-foreground: #1b2a3d;
-  --color-muted: #5a6a7e;
-  --color-muted-light: #f0f5f9;
-  --color-border: #dce4ed;
+  --color-foreground: #191919;
+  --color-foreground-soft: #282828;
+  --color-muted: #424242;
+  --color-muted-light: #f5f5f5;
+  --color-border: #e8e8e8;
+  --color-border-strong: #d4d4d4;
 
   /* Status */
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
+  --color-success: #15803d;
+  --color-warning: #f9b700;
+  --color-error: #bf0000;
 
   --font-sans: var(--font-inter);
 }
@@ -39,10 +43,21 @@
   scroll-behavior: smooth;
 }
 
+html {
+  font-size: 17px;
+}
+
+@media (min-width: 1280px) {
+  html { font-size: 18px; }
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
@@ -50,7 +65,53 @@ body {
   color: white;
 }
 
-/* Heartbeat pulse animation */
+/* Headings inherit color from their container so text-white / text-foreground
+   set on a parent section flows through correctly */
+h1, h2, h3, h4 {
+  letter-spacing: -0.015em;
+  color: inherit;
+}
+
+/* Utility — white text for dark-background sections */
+.text-on-dark       { color: rgba(255, 255, 255, 0.95); }
+.text-on-dark-soft  { color: rgba(255, 255, 255, 0.80); }
+.text-on-dark-muted { color: rgba(255, 255, 255, 0.60); }
+
+/* ─── Section background gradients ──────────────────────────────────────── */
+
+/* Hero gradient: medium-light blue left → bright AllMed blue right
+   The left side is just dark enough to keep white text readable;
+   the right side is a vivid, friendly blue. */
+.bg-brand-gradient {
+  background-image: linear-gradient(135deg, #0d3b7a 0%, #1060b8 45%, #2184d1 100%);
+}
+.bg-brand-gradient-r {
+  background-image: linear-gradient(90deg, #0d3b7a 0%, #1060b8 45%, #2184d1 100%);
+}
+
+/* Light-blue tint used for alternating content strips */
+.bg-brand-light {
+  background-image: linear-gradient(135deg, #e8f3fd 0%, #dbeeff 100%);
+}
+
+/* Subtle wash for decorative use */
+.bg-brand-wash {
+  background-image: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+}
+
+/* Ensure all children inside brand-gradient sections inherit white text */
+.bg-brand-gradient,
+.bg-brand-gradient-r {
+  color: white;
+}
+
+/* Header top utility bar — brand red */
+.bg-brand-bar {
+  background-image: linear-gradient(90deg, #bf0000 0%, #dd0218 50%, #bf0000 100%);
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
   14% { transform: scale(1.1); }
@@ -60,34 +121,40 @@ body {
 }
 
 @keyframes pulse-ring {
-  0% { transform: scale(0.95); opacity: 1; }
-  100% { transform: scale(1.3); opacity: 0; }
+  0%   { transform: scale(0.95); opacity: 1; }
+  100% { transform: scale(1.3);  opacity: 0; }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+  50%       { transform: translateY(-6px); }
 }
 
 @keyframes dash {
   to { stroke-dashoffset: 0; }
 }
 
-.animate-heartbeat {
-  animation: heartbeat 1.5s ease-in-out infinite;
-}
+.animate-heartbeat  { animation: heartbeat 1.5s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.animate-float      { animation: float 3s ease-in-out infinite; }
 
-.animate-pulse-ring {
-  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* ECG line animation */
 .ecg-line {
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
   animation: dash 2s linear infinite;
+}
+
+/* ─── Interaction polish ─────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (pointer: fine) {
+  ::-webkit-scrollbar       { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #fafafa; }
+  ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 8px; border: 3px solid #fafafa; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
 }

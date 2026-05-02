@@ -34,7 +34,7 @@ export default function InsurancePage() {
   return (
     <div>
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-brand-gradient-r py-16 md:py-24 overflow-hidden">
         <HealthPattern className="absolute inset-0 w-full h-full text-white" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center text-white">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
@@ -44,7 +44,7 @@ export default function InsurancePage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Insurance Plans
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-on-dark-soft max-w-2xl mx-auto">
             We accept most insurance, Medicaid, and Medicare plans. If you
             can&apos;t find your insurance on our list, give us a call and
             we&apos;ll provide coverage answers fast.
@@ -129,7 +129,7 @@ export default function InsurancePage() {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               New Patient?
             </h2>
-            <p className="text-lg text-green-100 mb-6 max-w-xl mx-auto">
+            <p className="text-lg text-on-dark-soft mb-6 max-w-xl mx-auto">
               Save time by pre-registering online before your visit. Have your
               insurance card ready.
             </p>
@@ -137,7 +137,7 @@ export default function InsurancePage() {
               href={SITE.preRegistration}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-secondary-dark px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-secondary-dark px-8 py-3 rounded-lg font-semibold hover:bg-secondary-light transition-colors"
             >
               Pre-Register Now
               <ArrowRight className="w-5 h-5" />

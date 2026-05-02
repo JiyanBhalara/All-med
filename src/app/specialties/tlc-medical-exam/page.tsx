@@ -76,18 +76,18 @@ export default function TLCMedicalExamPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#003d5c] via-primary-dark to-primary text-white py-16 sm:py-20 overflow-hidden">
+      <section className="relative bg-brand-gradient text-white py-16 sm:py-20 overflow-hidden">
         <HealthPattern className="absolute inset-0 w-full h-full text-white" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
               <ShieldMedical className="h-4 w-4 text-secondary" />
-              <span className="text-blue-100 font-medium">TLC Ready &mdash; NYC Licensed</span>
+              <span className="text-on-dark-soft font-medium">TLC Ready &mdash; NYC Licensed</span>
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               TLC Medical Exam
             </h1>
-            <p className="mt-6 text-lg leading-8 text-blue-100">
+            <p className="mt-6 text-lg leading-8 text-on-dark-soft">
               TLC exam for professional NYC drivers seeking TLC licensure. An in-depth
               look at your health and medical history to determine any issues that
               might prevent you from operating a vehicle safely.
@@ -153,7 +153,7 @@ export default function TLCMedicalExamPage() {
 
             {/* Important Note */}
             <section>
-              <div className="rounded-xl border border-warning/30 bg-amber-50 p-6">
+              <div className="rounded-xl border border-warning/30 bg-accent-light p-6">
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="h-5 w-5 text-warning flex-shrink-0 mt-0.5" />
                   <div>
@@ -201,7 +201,7 @@ export default function TLCMedicalExamPage() {
             <section>
               <div className="rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-8 text-white text-center">
                 <h2 className="text-2xl font-bold">Reserve Your Spot Today</h2>
-                <p className="mt-3 text-blue-100 max-w-lg mx-auto">
+                <p className="mt-3 text-on-dark-soft max-w-lg mx-auto">
                   Walk in or pre-register online to schedule your TLC medical exam.
                   Open 7 days a week with minimal wait times.
                 </p>
@@ -210,7 +210,7 @@ export default function TLCMedicalExamPage() {
                     href={SITE.preRegistration}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-lg hover:bg-blue-50 transition-colors"
+                    className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-lg hover:bg-primary-light transition-colors"
                   >
                     Pre-Register Online
                   </a>

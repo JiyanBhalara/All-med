@@ -25,6 +25,7 @@ export const LOCATIONS = [
     phone: "718-659-0400",
     phoneHref: "tel:7186590400",
     mapQuery: "115-20+Liberty+Ave,+Jamaica,+NY+11419",
+    googlePlaceId: "ChIJd_7TAE9nwokRs_8-D5PPJ-I",
     hours: [
       { days: "Monday - Friday", time: "9:00 AM – 6:30 PM" },
       { days: "Wednesday", time: "9:00 AM – 6:00 PM" },
@@ -48,6 +49,7 @@ export const LOCATIONS = [
     phone: "718-659-0400",
     phoneHref: "tel:7186590400",
     mapQuery: "55+W+Old+Country+Rd+Suite+1,+Hicksville,+NY+11801",
+    googlePlaceId: "ChIJI2sKx3uBwokRfCkTl2UJ2Lk",
     hours: [
       { days: "Monday - Saturday", time: "9:00 AM – 6:30 PM" },
       { days: "Sunday", time: "10:00 AM – 3:00 PM" },
@@ -99,5 +101,6 @@ export const NAV_LINKS = [
   },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },
 ] as const;

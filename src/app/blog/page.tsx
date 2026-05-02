@@ -44,7 +44,7 @@ const BLOG_POSTS = [
     category: "Respiratory",
   },
   {
-    title: "Kidney Stones – Effects & Symptoms",
+    title: "Kidney Stones â€“ Effects & Symptoms",
     date: "May 1, 2019",
     excerpt:
       "Kidney stones cause painful stone formation and can lead to severe pain, urinary changes, and fever. Learn about symptoms, causes, and when to seek care.",
@@ -58,7 +58,7 @@ const BLOG_POSTS = [
     category: "Digestive Health",
   },
   {
-    title: "Measles – Symptoms & Effects",
+    title: "Measles â€“ Symptoms & Effects",
     date: "April 19, 2019",
     excerpt:
       "Measles is extremely contagious. Reports show that 1 out of 4 adults infected end up hospitalized. Vaccination remains the best prevention method.",
@@ -84,9 +84,9 @@ export default function BlogPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary py-16 md:py-24">
+      <section className="bg-brand-gradient-r py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-white">
-          <nav className="text-sm text-blue-200 mb-6">
+          <nav className="text-sm text-on-dark-muted mb-6">
             <Link href="/" className="hover:text-white">
               Home
             </Link>
@@ -100,7 +100,7 @@ export default function BlogPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Medical Topics Blog
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
+          <p className="text-xl text-on-dark-soft max-w-2xl">
             Stay informed with health tips, medical articles, and important
             health information from our board certified physicians.
           </p>
@@ -117,7 +117,7 @@ export default function BlogPage() {
                 className="bg-white rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 {/* Category Banner */}
-                <div className="h-32 bg-gradient-to-br from-primary-light to-blue-100 flex items-center justify-center p-6">
+                <div className="h-32 bg-gradient-to-br from-primary-light via-primary-lighter to-accent-light flex items-center justify-center p-6">
                   <span className="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
                     {post.category}
                   </span>

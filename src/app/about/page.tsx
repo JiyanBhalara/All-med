@@ -18,7 +18,7 @@ import { MedicalCross, HeartPulse, HealthPattern, ShieldMedical } from "@/compon
 export const metadata = {
   title: "About Us | All Med Urgent Care",
   description:
-    "Learn about All Med Urgent Care – Board Certified Doctors serving Jamaica Queens and Hicksville NY. Walk-in clinic open 7 days a week.",
+    "Learn about All Med Urgent Care â€“ Board Certified Doctors serving Jamaica Queens and Hicksville NY. Walk-in clinic open 7 days a week.",
 };
 
 const VALUES = [
@@ -70,10 +70,10 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-brand-gradient-r py-16 md:py-24 overflow-hidden">
         <HealthPattern className="absolute inset-0 w-full h-full text-white" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-white">
-          <nav className="text-sm text-blue-200 mb-6">
+          <nav className="text-sm text-on-dark-muted mb-6">
             <Link href="/" className="hover:text-white">
               Home
             </Link>
@@ -82,12 +82,12 @@ export default function AboutPage() {
           </nav>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
             <HeartPulse className="h-4 w-4 text-secondary" />
-            <span className="text-blue-100 font-medium">Caring for Our Community</span>
+            <span className="text-on-dark-soft font-medium">Caring for Our Community</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             About All Med Urgent Care
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
+          <p className="text-xl text-on-dark-soft max-w-2xl">
             Your trusted walk-in clinic with board certified doctors, serving
             the communities of Jamaica, Queens and Hicksville, Long Island.
           </p>
@@ -115,7 +115,7 @@ export default function AboutPage() {
               We are committed to saving you time, money, and treating our
               patients like family. Whether you need urgent care, a physical
               exam, immigration medical services, or specialty exams, our
-              experienced medical team is here for you — no appointment
+              experienced medical team is here for you â€” no appointment
               necessary, 7 days a week.
             </p>
           </div>
@@ -123,25 +123,25 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="relative bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary py-16 overflow-hidden">
+      <section className="relative bg-brand-gradient-r py-16 overflow-hidden">
         <HealthPattern className="absolute inset-0 w-full h-full text-white" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <div className="text-4xl md:text-5xl font-bold mb-2">15+</div>
-              <div className="text-blue-200">Years of Service</div>
+              <div className="text-on-dark-muted">Years of Service</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
-              <div className="text-blue-200">Patients Served</div>
+              <div className="text-on-dark-muted">Patients Served</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <div className="text-4xl md:text-5xl font-bold mb-2">2</div>
-              <div className="text-blue-200">Convenient Locations</div>
+              <div className="text-on-dark-muted">Convenient Locations</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <div className="text-4xl md:text-5xl font-bold mb-2">7</div>
-              <div className="text-blue-200">Days a Week</div>
+              <div className="text-on-dark-muted">Days a Week</div>
             </div>
           </div>
         </div>
@@ -194,8 +194,8 @@ export default function AboutPage() {
                 key={index}
                 className="bg-white rounded-2xl border border-border overflow-hidden shadow-sm"
               >
-                <div className="h-48 bg-gradient-to-br from-primary-light to-blue-100 flex items-center justify-center">
-                  <Users className="w-20 h-20 text-primary/30" />
+                <div className="h-48 bg-gradient-to-br from-primary-light via-primary-lighter to-secondary-light flex items-center justify-center">
+                  <Users className="w-20 h-20 text-primary/40" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold mb-1">{member.name}</h3>
@@ -257,14 +257,14 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <div className="relative bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary rounded-2xl p-8 md:p-12 text-white overflow-hidden">
+          <div className="relative bg-brand-gradient-r rounded-2xl p-8 md:p-12 text-white overflow-hidden">
             <HealthPattern className="absolute inset-0 w-full h-full text-white" />
             <div className="relative">
             <HeartPulse className="w-12 h-12 mx-auto mb-4 text-secondary animate-heartbeat" />
             <h2 className="text-3xl font-bold mb-4">
               Ready to Get the Care You Need?
             </h2>
-            <p className="text-blue-100 mb-8 max-w-lg mx-auto">
+            <p className="text-on-dark-soft mb-8 max-w-lg mx-auto">
               No appointment necessary. Simply walk in or reserve your spot
               online. We&apos;re here for you 7 days a week.
             </p>

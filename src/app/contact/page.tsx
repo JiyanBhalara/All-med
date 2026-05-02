@@ -50,10 +50,10 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero Banner */}
-      <section className="bg-gradient-to-r from-[#003d5c] via-[#005f8a] to-[#0077B6] py-16 md:py-24">
+      <section className="bg-brand-gradient-r py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-on-dark-soft max-w-2xl mx-auto">
             Have a question? We&apos;re here to help. Reach out to us by phone,
             visit us in person, or send us a message below.
           </p>
@@ -68,9 +68,9 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
 
               {/* Disclaimer */}
-              <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-                <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <p className="text-sm text-amber-800">
+              <div className="flex items-start gap-3 bg-accent-light border border-accent/30 rounded-xl p-4 mb-8">
+                <AlertTriangle className="w-5 h-5 text-accent-dark shrink-0 mt-0.5" />
+                <p className="text-sm text-foreground">
                   <strong>Important:</strong> Please do not share any personal
                   medical information through this form. For medical inquiries,
                   please call us directly or visit one of our locations.
@@ -78,7 +78,7 @@ export default function ContactPage() {
               </div>
 
               {submitted ? (
-                <div className="text-center py-12 bg-green-50 rounded-2xl">
+                <div className="text-center py-12 bg-secondary-light rounded-2xl">
                   <CheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
                   <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
                   <p className="text-muted max-w-md mx-auto">

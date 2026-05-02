@@ -40,7 +40,7 @@ const services = [
     icon: Heart,
     title: "Women's Health",
     description: "Birth control, HPV, Pregnancy evaluation, UTI treatment",
-    color: "bg-red-50 text-red-500",
+    color: "bg-primary-light text-primary",
   },
   {
     icon: Syringe,
@@ -52,13 +52,13 @@ const services = [
     icon: FlaskConical,
     title: "Lab & Diagnostics",
     description: "Blood tests, Digital X-rays, STD/HIV screening, Urinalysis",
-    color: "bg-purple-50 text-purple-600",
+    color: "bg-secondary-light text-secondary",
   },
   {
     icon: Baby,
     title: "Pediatrics",
     description: "Child care, School physicals, Immunizations, Sick visits",
-    color: "bg-teal-50 text-teal-600",
+    color: "bg-accent-light text-accent-dark",
   },
 ];
 
@@ -107,10 +107,10 @@ export default function Home() {
       />
 
       {/* 2. COVID-19 Alert Banner */}
-      <div className="bg-amber-50 border-y border-amber-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-3 text-amber-800">
-          <AlertTriangle className="h-5 w-5 shrink-0 text-amber-600" />
-          <p className="text-sm sm:text-base font-medium text-center">
+      <div className="bg-primary border-b border-primary-dark">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-center gap-3">
+          <AlertTriangle className="h-4 w-4 shrink-0 text-white" />
+          <p className="text-sm font-semibold text-white text-center tracking-wide">
             COVID-19 and Antibody Testing Available Now &mdash; Inquire Within
           </p>
         </div>
@@ -216,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* 5. Trust Strip / Why Choose Us */}
-      <section className="relative bg-gradient-to-r from-[#003d5c] via-primary-dark to-primary py-16 overflow-hidden">
+      <section className="relative bg-brand-gradient py-16 overflow-hidden">
         {/* Heartbeat line background */}
         <div className="absolute inset-0 flex items-center opacity-10">
           <HeartbeatLine className="w-full h-16 text-white" />
@@ -224,16 +224,20 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold text-on-dark mb-4">
+              <Award className="h-3.5 w-3.5 text-accent" />
+              Trusted by 50,000+ Patients
+            </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Why Patients Choose All Med
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center text-white">
             {stats.map(({ icon: Icon, value, label }) => (
-              <div key={label} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                <Icon className="h-8 w-8 mx-auto mb-3 text-secondary" />
+              <div key={label} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/15 hover:bg-white/15 hover:border-white/30 transition-colors">
+                <Icon className="h-8 w-8 mx-auto mb-3 text-accent" />
                 <p className="text-2xl sm:text-3xl font-bold">{value}</p>
-                <p className="mt-1 text-sm text-blue-100">{label}</p>
+                <p className="mt-1 text-sm text-on-dark-soft">{label}</p>
               </div>
             ))}
           </div>
@@ -380,9 +384,9 @@ export default function Home() {
       </section>
 
       {/* 8. CTA Section */}
-      <section className="relative bg-gradient-to-br from-[#003d5c] via-primary-dark to-primary py-16 sm:py-20 overflow-hidden">
+      <section className="relative bg-brand-gradient py-16 sm:py-20 overflow-hidden">
         {/* Health pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-[0.07]">
           <div className="absolute top-10 left-10">
             <MedicalCross className="w-20 h-20 text-white" />
           </div>
@@ -392,11 +396,11 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center text-white">
-          <HeartPulse className="h-12 w-12 mx-auto mb-4 text-secondary animate-heartbeat" />
+          <HeartPulse className="h-12 w-12 mx-auto mb-4 text-accent animate-heartbeat" />
           <h2 className="text-3xl sm:text-4xl font-bold">
             Ready to Get the Care You Need?
           </h2>
-          <p className="mt-4 text-lg text-blue-100">
+          <p className="mt-4 text-lg text-on-dark-soft">
             No appointment necessary. Simply walk in or reserve your spot
             online.
           </p>
@@ -405,14 +409,14 @@ export default function Home() {
               href={SITE.preRegistration}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-secondary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-secondary/30 transition-all hover:bg-secondary-dark hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-primary shadow-xl shadow-black/20 transition-all hover:bg-accent hover:text-foreground hover:-translate-y-0.5"
             >
               <CalendarCheck className="h-5 w-5" />
               Reserve Your Spot
             </a>
             <a
               href={SITE.phoneHref}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/40 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white hover:text-primary hover:border-white hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white hover:text-primary hover:border-white hover:-translate-y-0.5"
             >
               <Phone className="h-5 w-5" />
               Call Now: {SITE.phone}
